@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
@@ -16,7 +17,13 @@ namespace RSGymPTManagement_Client.Configurations
     {
         const string headerTitle = "RSGym - Management System";
 
+        public static void StartConsoleApp()
+        {
+            PostalCodeRepository.CreateCP();
+            UserRepository.CreateUsers();
+            ClientRepository.CreateCliente();
 
+        }
         public static void MenuLoginExit()
         {
             bool validInput = false;
@@ -55,7 +62,7 @@ namespace RSGymPTManagement_Client.Configurations
         public static (string, string) Login()
         {
             // Guarda os dados do login numa nova variável do tipo tuple
-            
+
 
             (string, string) userResult = DataLogin.LoopLogin(DataLogin.MessageLogin(DataLogin.ValidateCredentials(DataLogin.ReadCredentials())));
 
@@ -338,7 +345,7 @@ namespace RSGymPTManagement_Client.Configurations
         public static void RequestAdministrationMenu()
         {
             bool validInput = false;
-            RequestAdministrationMenu:
+        RequestAdministrationMenu:
             while (!validInput)
             {
                 UtilityMenu.ChangePage();

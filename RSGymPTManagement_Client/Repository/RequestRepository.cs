@@ -12,21 +12,6 @@ namespace RSGymPTManagement_Client.Repository
 {
     internal class RequestRepository
     {
-        public static void CreateRequest()
-        {
-            using (var db = new RSGymPTManagementContext())
-            {
-                IList<Request> requests = new List<Request>
-                {
-                   new Request() {ClientId = 1, PersonalTrainerId = 1, Schedule = new DateTime(2023,06,09,18,30,00), Status = Request.EnumStatus.schedule, Observation = "Aula pump" },
-                   new Request() {ClientId = 2, PersonalTrainerId = 2, Schedule = new DateTime(2023,06,10,17,00,00), Status= Request.EnumStatus.schedule, Observation = "Aula de cardio"},
-                   new Request() {ClientId = 3, PersonalTrainerId = 1, Schedule= new DateTime(2023,07,03,16,30,00), Status = Request.EnumStatus.schedule, Observation = ""}
-                };
-
-                db.Requests.AddRange(requests);
-                db.SaveChanges();
-            }
-        }
 
         public static void CreateNewRequest()
         {

@@ -21,20 +21,9 @@ namespace RSGymPTManagement_Client
             {
                 Utility.SetUnicodeConsole();
 
-                /*
-                // cria os dados iniciais
-                PostalCodeRepository.CreateCP();
-                UserRepository.CreateUsers();
-                ClientRepository.CreateCliente();
-                PersonalTrainerRepository.CreatePersonalTrainer();
-                RequestRepository.CreateRequest();
-                */
-
-
+                Perform.StartConsoleApp();
                 Perform.MenuLoginExit();
-                
 
-                
             }
             catch (DbEntityValidationException ex)
             {

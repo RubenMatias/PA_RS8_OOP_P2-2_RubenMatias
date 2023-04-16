@@ -13,10 +13,7 @@ namespace RSGymPTManagement_DAL.Model
     {
         #region Scalar properties
 
-        
         public int ClientID { get; set; }
-        //[Required]
-        //public int UserID { get; set; }
         [Required]
         public int PostalCodeID { get; set; }
         [Required]
